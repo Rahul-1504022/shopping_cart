@@ -104,6 +104,19 @@ function removeProductFromLocalStorage(productItem){
     localStorage.setItem('products',JSON.stringify(products));
 }
 
+//clear all products from cart
+function allClear(){
+    while(productCart.firstChild){
+        productCart.removeChild(productCart.firstChild);
+    }
+    clearAllFromLocalStorage();
+}
+
+//clear all product from local storage
+function clearAllFromLocalStorage(){
+    localStorage.clear();
+}
+
 
 
 
@@ -115,3 +128,4 @@ document.querySelector('#add_cart_btn4').addEventListener('click',addCart);
 document.querySelector('#add_cart_btn5').addEventListener('click',addCart);
 document.addEventListener('DOMContentLoaded',getProduct);
 productCart.addEventListener('click',clearProduct);
+document.querySelector('#all_clear').addEventListener('click',allClear);
