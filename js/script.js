@@ -106,6 +106,7 @@ function removeProductFromLocalStorage(productItem){
 
 //clear all products from cart
 function allClear(){
+    alert("Are you sure?")
     while(productCart.firstChild){
         productCart.removeChild(productCart.firstChild);
     }
